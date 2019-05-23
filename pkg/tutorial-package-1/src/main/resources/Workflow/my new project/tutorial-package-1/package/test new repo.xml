@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="d1de9f2c-373f-4c0e-9484-833e16acbe9d" version="0.0.1" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[test new repo]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <attrib name="text" type="String" read-only="false">
+    <value encoded="n"><![CDATA[hello]]></value>
+    <description><![CDATA[The text to log]]></description>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="524.5"/>
+  </workflow-item>
+  <workflow-item name="item2" prototype-id="system-log" out-name="item0" type="task" interaction="l">
+    <display-name><![CDATA[System log]]></display-name>
+    <script encoded="false"><![CDATA[//Auto-generated script
+System.log(text);
+]]></script>
+    <in-binding>
+      <bind name="text" type="String" export-name="text">
+        <description><![CDATA[The text to log]]></description>
+      </bind>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Log the input text to the console log with level 'log']]></description>
+    <position y="55.40909090909091" x="344.5"/>
+  </workflow-item>
+  <workflow-item name="item1" prototype-id="send-custom-event" out-name="item2" content-mode="r" type="task">
+    <display-name><![CDATA[Send custom event]]></display-name>
+    <script encoded="false"><![CDATA[//Auto-generated script
+if (eventName != null) {
+    System.sendCustomEvent(eventName);
+}
+else  {
+    throw "'eventName' is NULL";
+}
+]]></script>
+    <in-binding>
+      <bind name="eventName" type="string" export-name="text">
+        <description><![CDATA[Custom event name]]></description>
+      </bind>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Send a custom event]]></description>
+    <position y="55.90909090909091" x="205.0"/>
+  </workflow-item>
+  <presentation/>
+</workflow>
