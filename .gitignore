@@ -1,0 +1,6 @@
+**/src/main/resources/META-INF/history/
+**/*.version-history.xml
+**/*-ORIG.element_info.xml
+**/*-ORIG.xml
+**/*.tags.xml
+

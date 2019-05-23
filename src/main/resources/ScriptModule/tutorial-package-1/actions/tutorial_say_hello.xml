@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="tutorial_say_hello" result-type="void" api-version="6.0.0" id="160aba67-68f4-4492-982c-c0c377afd605" version="0.0.0" allowed-operations="vef">
+  <script encoded="false"><![CDATA[System.log("Conflict here from 189");]]></script>
+</dunes-script-module>

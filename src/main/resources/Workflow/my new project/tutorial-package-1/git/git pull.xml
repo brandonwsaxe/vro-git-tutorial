@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item2" object-name="workflow:name=generic" id="134f97d4-298e-4cd9-8e43-098176db1178" version="0.0.3" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[git pull]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <attrib name="packageName" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="664.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item3" type="link" linked-workflow-id="74a672f4-7fa7-428f-8c84-4674f86c9a10">
+    <display-name><![CDATA[git-package-pull]]></display-name>
+    <in-binding>
+      <bind name="packageName" type="string" export-name="packageName"/>
+    </in-binding>
+    <out-binding/>
+    <position y="55.40909090909091" x="344.5"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item1" type="task">
+    <display-name><![CDATA[get names]]></display-name>
+    <script encoded="false"><![CDATA[//
+
+packageName = workflow.currentWorkflow.workflowCategory.parent.name + "-dev";
+]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="packageName" type="string" export-name="packageName"/>
+    </out-binding>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <workflow-item name="item3" out-name="item0" type="link" linked-workflow-id="31c376fd-52c2-42a6-989d-4ea662d36428">
+    <display-name><![CDATA[keep last execution only]]></display-name>
+    <in-binding/>
+    <out-binding/>
+    <position y="55.40909090909091" x="484.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item2" object-name="workflow:name=generic" id="ecba3b25-85c5-413f-b6e3-b8c977a7685c" version="0.0.3" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[build-dev]]></display-name>
+  <description><![CDATA[Builds the '-dev' version of 'this' package. This includes the build/git folders as well as the workflow package content. The '-dev' version of a package is tracked in git.]]></description>
+  <position y="50.0" x="100.0"/>
+  <output>
+    <param name="targetPackageName" type="string"/>
+  </output>
+  <attrib name="packageName" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="workflowFolder" type="WorkflowCategory" read-only="false"/>
+  <attrib name="timestamp" type="boolean" read-only="false">
+    <value encoded="n"><![CDATA[false]]></value>
+  </attrib>
+  <attrib name="excludePackageNames" type="Array/string" read-only="false">
+    <value encoded="n"><![CDATA[#{#string#ootb#;#string#vro-package-buildtools#;#string#vro-git#;#string#vro-package-buildtools-dev#}#]]></value>
+  </attrib>
+  <workflow-note x="80.0" y="9.090909090909092" w="620.0" h="27.27272727272727" color="d7d7d7ff">
+    <description><![CDATA[Builds the '-dev' version of 'this' package. This includes the build/git folders as well as the workflow package content. The '-dev' version of a package is tracked in git.]]></description>
+  </workflow-note>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="804.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item3" type="link" linked-workflow-id="1f82a5d3-358a-4435-9afa-e1e70b854367">
+    <display-name><![CDATA[build base package from folder]]></display-name>
+    <in-binding>
+      <bind name="packageName" type="string" export-name="packageName"/>
+      <bind name="workflowFolder" type="WorkflowCategory" export-name="workflowFolder"/>
+      <bind name="timestamp" type="boolean" export-name="timestamp"/>
+    </in-binding>
+    <out-binding>
+      <bind name="targetPackageName" type="string" export-name="targetPackageName"/>
+    </out-binding>
+    <description><![CDATA[Builds a base package from a workflow folder. The base package can then be stripped.]]></description>
+    <position y="55.40909090909091" x="344.5"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item1" type="task">
+    <display-name><![CDATA[get names]]></display-name>
+    <script encoded="false"><![CDATA[//
+
+workflowFolder = workflow.currentWorkflow.workflowCategory.parent;
+packageName = workflowFolder.name + '-dev';]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="packageName" type="string" export-name="packageName"/>
+      <bind name="workflowFolder" type="WorkflowCategory" export-name="workflowFolder"/>
+    </out-binding>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <workflow-item name="item3" out-name="item4" type="link" linked-workflow-id="e1b473eb-adfc-43ea-a253-49d99dacc85b">
+    <display-name><![CDATA[strip package of packages]]></display-name>
+    <in-binding>
+      <bind name="packageName" type="string" export-name="packageName"/>
+      <bind name="excludePackageNames" type="Array/string" export-name="excludePackageNames"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Strips a package of objects based on the contents of other packages]]></description>
+    <position y="55.40909090909091" x="484.5"/>
+  </workflow-item>
+  <workflow-item name="item4" out-name="item0" type="link" linked-workflow-id="31c376fd-52c2-42a6-989d-4ea662d36428">
+    <display-name><![CDATA[keep last execution only]]></display-name>
+    <in-binding/>
+    <out-binding/>
+    <position y="55.40909090909091" x="624.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

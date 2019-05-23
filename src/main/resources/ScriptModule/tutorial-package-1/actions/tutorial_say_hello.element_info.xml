@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">tutorial-package-1.actions</entry>
+<entry key="categoryPathEscaped">dHV0b3JpYWwtcGFja2FnZS0x.YWN0aW9ucw==</entry>
+<entry key="name">tutorial_say_hello</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">160aba67-68f4-4492-982c-c0c377afd605</entry>
+</properties>

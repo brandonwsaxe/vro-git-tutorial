@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="bdcb011e-3bcd-457e-a130-644f6c6c1c87" version="0.0.4" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Hello world]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <attrib name="text" type="String" read-only="false">
+    <value encoded="n"><![CDATA[hello world]]></value>
+    <description><![CDATA[The text to log]]></description>
+  </attrib>
+  <workflow-note x="180.0" y="153.77272727272725" w="100.0" h="47.0">
+    <description><![CDATA[Hi there!]]></description>
+  </workflow-note>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="384.5"/>
+  </workflow-item>
+  <workflow-item name="item1" prototype-id="system-log" out-name="item0" type="task" interaction="l">
+    <display-name><![CDATA[System log]]></display-name>
+    <script encoded="false"><![CDATA[//Auto-generated script
+System.log(text);
+]]></script>
+    <in-binding>
+      <bind name="text" type="String" export-name="text">
+        <description><![CDATA[The text to log]]></description>
+      </bind>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Log the input text to the console log with level 'log']]></description>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

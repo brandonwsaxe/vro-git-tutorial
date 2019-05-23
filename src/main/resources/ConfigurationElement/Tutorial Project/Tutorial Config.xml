@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config-element id="e2d7167d-902d-4726-8efb-3949c2231ab6" version="0.0.0">
+  <display-name><![CDATA[Tutorial Config]]></display-name>
+  <atts>
+    <att name="my_secret" type="SecureString" read-only="false"/>
+  </atts>
+</config-element>

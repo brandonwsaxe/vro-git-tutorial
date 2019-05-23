@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="c13e59cb-942a-4f6b-ae81-23e6e78d0bc3" version="0.0.3" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Workflow 2]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <workflow-note x="300.0" y="162.86363636363635" w="100.0" h="47.0">
+    <description><![CDATA[122]]></description>
+  </workflow-note>
+  <workflow-note x="460.0" y="181.3181818181818" w="100.0" h="49.0" color="ebb0b0ff">
+    <description><![CDATA[197]]></description>
+  </workflow-note>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="384.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item0" type="task">
+    <display-name><![CDATA[TODO make it work]]></display-name>
+    <script encoded="false"><![CDATA[//]]></script>
+    <in-binding/>
+    <out-binding/>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

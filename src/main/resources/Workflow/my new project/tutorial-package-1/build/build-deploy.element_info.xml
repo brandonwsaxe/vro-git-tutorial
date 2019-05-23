@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">my new project.tutorial-package-1.build</entry>
+<entry key="categoryPathEscaped">bXkgbmV3IHByb2plY3Q=.dHV0b3JpYWwtcGFja2FnZS0x.YnVpbGQ=</entry>
+<entry key="name">build-deploy</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">7f7b8746-7ee9-46db-8499-d55cbec1d7ff</entry>
+</properties>

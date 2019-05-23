@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">my new project.tutorial-package-1.package</entry>
+<entry key="categoryPathEscaped">bXkgbmV3IHByb2plY3Q=.dHV0b3JpYWwtcGFja2FnZS0x.cGFja2FnZQ==</entry>
+<entry key="name">Workflow 2</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">c13e59cb-942a-4f6b-ae81-23e6e78d0bc3</entry>
+</properties>

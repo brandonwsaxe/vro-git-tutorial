@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="11ce8809-3ca4-44e6-8f54-cc505a9bdf62" version="0.0.7" api-version="6.0.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[create conflict]]></display-name>
+  <error-handler name="item5" throw-bind-name="errorCode">
+    <position y="255.0" x="105.0"/>
+  </error-handler>
+  <position y="50.0" x="100.0"/>
+  <attrib name="errorCode" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="actionResult" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <workflow-note x="480.0" y="145.45454545454544" w="100.0" h="48.0">
+    <description><![CDATA[Let's try to create this conlifct again, shall we?]]></description>
+  </workflow-note>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="524.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item6" catch-name="item2" throw-bind-name="errorCode" type="task">
+    <display-name><![CDATA[i am 122]]></display-name>
+    <script encoded="false"><![CDATA[//
+System.log("I SAID I AM 122!");]]></script>
+    <in-binding/>
+    <out-binding/>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item3" type="custom-condition" alt-out-name="item4">
+    <display-name><![CDATA[epic fail]]></display-name>
+    <script encoded="false"><![CDATA[return true]]></script>
+    <in-binding/>
+    <position y="109.04545454545453" x="205.0"/>
+  </workflow-item>
+  <workflow-item name="item3" type="end" end-mode="0">
+    <position y="172.68181818181816" x="245.0"/>
+  </workflow-item>
+  <workflow-item name="item4" throw-bind-name="errorCode" type="end" end-mode="1">
+    <position y="109.04545454545453" x="384.5"/>
+  </workflow-item>
+  <workflow-item name="item5" throw-bind-name="errorCode" type="end" end-mode="1">
+    <position y="255.0" x="244.5"/>
+  </workflow-item>
+  <workflow-item name="item6" out-name="item0" type="task" script-module="com.vmware.constants/getDefaultCompanyName">
+    <display-name><![CDATA[getDefaultCompanyName]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.constants").getDefaultCompanyName() ;]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="actionResult" type="string" export-name="actionResult"/>
+    </out-binding>
+    <description><![CDATA[Returns the company name.]]></description>
+    <position y="55.40909090909091" x="344.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>
